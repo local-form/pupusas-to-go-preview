@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pupusas To Go · Bloomfield, NJ · Central American food (preview)</title>
+<meta name="description" content="Pupusas To Go, 388 Bloomfield Ave, Bloomfield NJ. Pupusas $3 each, Central American breakfasts, soups and plates. Fill the comal, then call it in. Independent preview by Local Form.">
+<meta name="theme-color" content="#151a45">
+<meta property="og:title" content="Pupusas To Go · Fill the comal">
+<meta property="og:description" content="Pick 6 or 12, tap the fillings, call it in. Central American food at 388 Bloomfield Ave.">
+<meta property="og:image" content="assets/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/bungee-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/schibsted-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/pupusa-a.webp" as="image">
+<link rel="preload" href="assets/pupusa-b.webp" as="image">
+<link rel="stylesheet" href="styles.css?v=7">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Pupusas To Go","servesCuisine":["Central American","Salvadoran","Guatemalan","Honduran"],"telephone":"+1-973-429-2649","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"388 Bloomfield Ave","addressLocality":"Bloomfield","addressRegion":"NJ","postalCode":"07003","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:30","closes":"16:30"}]}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#comal">Skip to the comal</a>
+<div class="stripe" aria-hidden="true"></div>
+<p class="previewbar">Concept preview by <a href="https://localform.online">Local Form</a> · not the official site</p>
+
+<header class="bar" id="bar">
+  <a class="brand" href="#top" aria-label="Pupusas To Go, back to top">
+    <img src="assets/logo.webp" alt="" width="40" height="40">
+    <span class="brand-t"><b>Pupusas To Go</b><small>El sabor de Centroamérica</small></span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#menu">Menú</a><a href="#visit">Visit</a><a href="#party">Party orders</a>
+  </nav>
+  <a class="btn btn-call sm" href="tel:+19734292649"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>(973) 429-2649</span></a>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow">388 Bloomfield Ave · <span lang="es">pupusas a $3 c/u</span></p>
+      <h1 id="h1"><span lang="es">Llena el comal.</span></h1>
+      <p class="lede">Fill the comal: pick how many, tap the fillings, then call it in with your order on screen.</p>
+    </div>
+
+    <div class="counts" role="radiogroup" aria-label="How many pupusas">
+      <button type="button" role="radio" data-n="6">6</button>
+      <button type="button" role="radio" data-n="12" aria-checked="true">12</button>
+      <button type="button" role="radio" data-n="24" class="crowd">24</button>
+      <button type="button" role="radio" data-n="50" class="crowd">50</button>
+      <a class="crowd-tag" href="#party">24 or 50: party orders</a>
+    </div>
+
+    <div class="stage">
+      <div class="comal-wrap" id="comal">
+        <div class="glow" aria-hidden="true"></div>
+        <canvas class="iron" aria-hidden="true"></canvas>
+        <div class="spots" aria-hidden="true"></div>
+        <canvas class="steam" aria-hidden="true"></canvas>
+        <p class="count-badge" aria-hidden="true"><b id="badge-n">0</b>/<span id="badge-of">12</span></p>
+      </div>
+    </div>
+
+    <div class="chipbox">
+      <div class="chips" role="group" aria-label="Fillings: tap to add"></div>
+      <p class="chips-hint" id="chips-hint">Tap a filling to lay one on the comal. Tap a pupusa to take it off.</p>
+    </div>
+
+    <aside class="ticket" aria-labelledby="ticket-h">
+      <div class="ticket-top">
+        <h2 id="ticket-h"><span lang="es">Tu orden</span> <small>Your order</small></h2>
+        <button type="button" class="clear" id="clear">Clear</button>
+      </div>
+      <ul class="lines" id="lines" aria-live="polite"></ul>
+      <div class="say" id="say" hidden>
+        <p class="say-l">Read it out</p>
+        <p class="say-es" lang="es" id="say-es"></p>
+        <p class="say-en" id="say-en"></p>
+      </div>
+      <p class="total"><span id="tot-n">0 pupusas</span><b id="tot-p">$0.00</b></p>
+      <p class="fine">$3 each in the shop, from their menu posted May 2026. Delivery apps charge more. Curtido and salsa on the side.</p>
+      <div class="actions">
+        <a class="btn btn-call" id="call" href="tel:+19734292649"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span><span lang="es">Llamar</span> · Call (973) 429-2649</span></a>
+        <a class="btn btn-out" id="dd" href="https://www.doordash.com/store/pupusas-to-go-bloomfield-1292155/2071378/" target="_blank" rel="noopener"><span lang="es">Pedir en DoorDash</span></a>
+        <a class="btn btn-out" id="party-go" href="#party" hidden><span><span lang="es">Pedido para fiesta</span> · Send as a party order</span></a>
+      </div>
+    </aside>
+  </div>
+
+  <div class="now" id="now" aria-live="polite">
+    <p class="now-l"><span lang="es">Ahora en el comal</span> <small>Right now</small></p>
+    <p class="now-t"><i class="dot" id="now-dot"></i><span id="now-open">Open</span> <span id="now-what"></span></p>
+  </div>
+</section>
+
+<section class="menu" id="menu" aria-labelledby="menu-h">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Menú · from their own menu</p>
+    <h2 id="menu-h" data-reveal>El sabor de Centroamérica</h2>
+    <p class="sub" data-reveal>Guatemala, El Salvador and Honduras, from breakfast at 6:30. Prices from their menu posted on Instagram, May 2026. Call to confirm.</p>
+
+    <div class="cards">
+      <article class="card card-pupusas" data-reveal>
+        <img src="assets/pupusas-tipica.webp" alt="Pupusas on a plate over a striped Guatemalan tablecloth" loading="lazy" width="1000" height="750">
+        <div class="card-b">
+          <h3><span lang="es">Pupusas</span> <span class="price">$3 c/u</span></h3>
+          <ul class="names">
+            <li><b lang="es">Queso</b> cheese</li><li><b lang="es">Queso y loroco</b> cheese &amp; loroco</li>
+            <li><b lang="es">Frijol y queso</b> bean &amp; cheese</li><li><b lang="es">Pollo y queso</b> chicken &amp; cheese</li>
+            <li><b lang="es">Frijol</b> bean</li><li><b lang="es">Mixtas</b> mix</li>
+            <li><b lang="es">Ayote</b> squash</li><li><b lang="es">Pollo</b> chicken</li>
+            <li><b lang="es">Queso y jalapeños</b> cheese &amp; jalapeño</li>
+          </ul>
+          <a class="btn btn-out small" href="#comal">Fill the comal</a>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <img src="assets/desayuno.webp" alt="Desayuno típico: eggs, fried plantains, refried beans, cream and avocado" loading="lazy" width="1000" height="750">
+        <div class="card-b">
+          <h3><span lang="es">Desayunos</span> <small>Breakfast</small></h3>
+          <ul class="pl">
+            <li><span><b lang="es">Desayuno típico</b> beans, plantains, eggs, cheese &amp; cream</span><i>$10</i></li>
+            <li><span><b lang="es">Desayuno con carne</b> with meat</span><i>$13</i></li>
+            <li><span><b lang="es">Huevos</b> estrellados, con tomate, a la ranchera or revueltos con cebolla</span></li>
+            <li><span><b lang="es">Tamalitos</b> chuchitos, chepitos &amp; chipilín</span><i>$3</i></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <img src="assets/chicharron.webp" alt="A tray of fried pork with fried plantains and peppers" loading="lazy" width="640" height="385">
+        <div class="card-b">
+          <h3><span lang="es">Antojitos</span> <small>Small plates</small></h3>
+          <ul class="pl">
+            <li><span><b lang="es">Baleadas</b> flour tortilla, beans, cheese, cream &amp; egg</span><i>$6</i></li>
+            <li><span><b lang="es">Baleadas con carne</b> beef or chicken</span><i>$8</i></li>
+            <li><span><b lang="es">Tamales guatemaltecos de pollo</b></span><i>$4</i></li>
+            <li><span><b lang="es">Empanadas</b> 3 a plate</span><i>$7</i></li>
+            <li><span><b lang="es">Tacos tostados</b> chicken or beef</span><i>$10</i></li>
+            <li><span><b lang="es">Tostadas de aguacate</b> 3 a plate</span><i>$8</i></li>
+            <li><span><b lang="es">Quesadilla de pollo</b></span><i>$9</i></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <img src="assets/sopa.webp" alt="Sopa de res with corn and squash, with a side of rice" loading="lazy" width="1000" height="749">
+        <div class="card-b">
+          <h3><span lang="es">Sopas</span> <small>Soups</small></h3>
+          <ul class="pl">
+            <li><span><b lang="es">Sopa de res</b> beef</span><i>$13</i></li>
+            <li><span><b lang="es">Sopa de pollo</b> chicken</span><i>$13</i></li>
+            <li><span><b lang="es">Sopa de mondongo</b> tripe</span><i>$13</i></li>
+            <li><span><b lang="es">Sopa de gallina</b> hen, Sundays only</span><i>$13</i></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <img src="assets/bistec.webp" alt="Grilled steak with onions, rice, beans, salad and plantains" loading="lazy" width="900" height="1124">
+        <div class="card-b">
+          <h3><span lang="es">Platos fuertes</span> <small>Plates, two sides included</small></h3>
+          <ul class="pl">
+            <li><span><b lang="es">Bistec encebollado</b> steak with onions</span><i>$14</i></li>
+            <li><span><b lang="es">Pechuga a la plancha</b> grilled chicken breast</span><i>$14</i></li>
+            <li><span><b lang="es">Carne asada</b></span><i>$14</i></li>
+            <li><span><b lang="es">Pollo asado</b></span><i>$13</i></li>
+            <li><span><b lang="es">Churrasquito</b> tender steak</span><i>$20</i></li>
+            <li><span><b lang="es">Tilapia frita</b> fried tilapia</span><i>$18</i></li>
+            <li><span><b lang="es">Chicharrones con yuca</b></span><i>$14</i></li>
+            <li><span><b lang="es">Camarones al ajillo</b> garlic shrimp</span><i>$14</i></li>
+          </ul>
+          <p class="mini">Sides: rice, beans, salad or fries. Extra side $3.</p>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <div class="card-b">
+          <h3><span lang="es">Bebidas</span> <small>Drinks</small></h3>
+          <ul class="pl">
+            <li><span><b lang="es">Frescos naturales</b> jamaica, tamarindo, guanábana, maracuyá, horchata</span><i>$5</i></li>
+            <li><span><b lang="es">Licuados</b> smoothies: banana, strawberry, mango, papaya, passion fruit, piña, mora, melón</span><i>$7</i></li>
+            <li><span><b lang="es">Gaseosas</b> bottle $3 · can $1.50 · water $1</span></li>
+          </ul>
+          <p class="mini">Coffee and desserts too: ask what's in today.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" aria-labelledby="rev-h">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>What people say</p>
+    <h2 id="rev-h" data-reveal>Big, filling, worth every penny</h2>
+    <div class="quotes">
+      <figure class="rq" data-reveal><blockquote>Their salsa was very flavorful… Extremely inexpensive and worth every penny.</blockquote><figcaption>Ernest · Google</figcaption></figure>
+      <figure class="rq" data-reveal><blockquote>The pupusas were big and had plenty of filling.</blockquote><figcaption>Ervin · Google</figcaption></figure>
+      <figure class="rq" data-reveal><blockquote>Food is great, inexpensive, and staff is super friendly!</blockquote><figcaption>Andrew · DoorDash</figcaption></figure>
+    </div>
+    <p class="rating" data-reveal>4.0 on Google</p>
+  </div>
+</section>
+
+<section class="photos" aria-labelledby="ph-h">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>From the kitchen</p>
+    <h2 id="ph-h" data-reveal>Hot off the comal</h2>
+    <div class="mosaic">
+      <img data-reveal class="m-tall" src="assets/cheese-pull.webp" alt="A cheese pupusa pulled apart, the cheese stretching" loading="lazy" width="900" height="1125">
+      <img data-reveal src="assets/curtido-salsa.webp" alt="Curtido and red salsa in to-go bags next to the pupusas" loading="lazy" width="900" height="1125">
+      <img data-reveal src="assets/milanesa.webp" alt="Breaded chicken with rice, beans and salad" loading="lazy" width="560" height="420">
+      <img data-reveal src="assets/mojarra.webp" alt="Whole fried fish with lime and salad" loading="lazy" width="896" height="672">
+      <img data-reveal class="m-tall" src="assets/pork-plantains.webp" alt="Fried pork and plantains with salad and pickled onion" loading="lazy" width="512" height="640">
+      <img data-reveal src="assets/party-table.webp" alt="A table of pupusas, salsa and curtido set out for a group" loading="lazy" width="900" height="1125">
+    </div>
+    <p class="mini">Customer photos from their Google listing and photos from their Instagram.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap visit-in">
+    <div>
+      <p class="eyebrow" data-reveal>Visit · <span lang="es">Visítanos</span></p>
+      <h2 id="visit-h" data-reveal>388 Bloomfield Ave</h2>
+      <p class="sub" data-reveal>On the corner, under the blue sign. Eat in, pick up, or get it delivered.</p>
+      <table class="hours" data-reveal aria-label="Opening hours">
+        <tbody id="hours">
+          <tr data-d="0"><th>Sunday</th><td>6:30am – 8pm</td></tr>
+          <tr data-d="1"><th>Monday</th><td>6:30am – 8pm</td></tr>
+          <tr data-d="2"><th>Tuesday</th><td>6:30am – 8pm</td></tr>
+          <tr data-d="3"><th>Wednesday</th><td>6:30am – 8pm</td></tr>
+          <tr data-d="4"><th>Thursday</th><td>6:30am – 8pm</td></tr>
+          <tr data-d="5"><th>Friday</th><td>6:30am – 8pm</td></tr>
+          <tr data-d="6"><th>Saturday</th><td>6:30am – 4:30pm</td></tr>
+        </tbody>
+      </table>
+      <p class="mini" data-reveal>Hours from Google. Call to confirm, especially on holidays.</p>
+      <div class="actions" data-reveal>
+        <a class="btn btn-call" href="tel:+19734292649"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Call (973) 429-2649</span></a>
+        <a class="btn btn-out" href="https://www.google.com/maps/dir/?api=1&amp;destination=Pupusas+To+Go+388+Bloomfield+Ave+Bloomfield+NJ+07003" target="_blank" rel="noopener"><span lang="es">Cómo llegar</span> · Directions</a>
+      </div>
+    </div>
+    <div class="visit-media">
+      <img data-reveal src="assets/storefront.webp" alt="The Pupusas To Go storefront on the corner of Bloomfield Ave, blue sign over the windows" loading="lazy" width="900" height="1200">
+      <iframe data-reveal title="Map: Pupusas To Go, 388 Bloomfield Ave" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1sPupusas+To+Go+388+Bloomfield+Ave+Bloomfield+NJ+07003!6i16"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="party" id="party" aria-labelledby="party-h">
+  <div class="wrap party-in">
+    <div>
+      <p class="eyebrow" data-reveal><span lang="es">Pedido para fiesta</span> · party &amp; catering</p>
+      <h2 id="party-h" data-reveal>Feeding a crowd?</h2>
+      <p class="sub" data-reveal>Office lunch, a birthday, the whole family on Sunday. Send what you need and the shop calls you back to confirm.</p>
+    </div>
+    <form id="party-form" class="form" action="#" novalidate>
+      <div class="f2">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+      </div>
+      <div class="f2">
+        <label>Date<input name="date" type="date" id="f-date"></label>
+        <label>Pickup time<input name="time" type="time" min="06:30" max="20:00"></label>
+      </div>
+      <label>How many pupusas<input name="count" type="number" min="1" max="500" inputmode="numeric" id="f-count"></label>
+      <label>Fillings <small>(from your comal, or type them)</small><textarea name="fillings" rows="3" id="f-fill" placeholder="e.g. 20 queso y loroco, 20 mixtas, 10 frijol y queso"></textarea></label>
+      <label>Anything else <small>(tamales, plates, drinks, notes)</small><textarea name="notes" rows="2"></textarea></label>
+      <p class="err" id="f-err" hidden>Please add your name and phone so they can call you back.</p>
+      <button class="btn btn-call wide" type="submit"><span><span lang="es">Enviar pedido</span> · Request party order</span></button>
+      <div class="done" id="f-done" hidden tabindex="-1">
+        <p class="done-h" id="f-done-h"></p>
+        <p>Preview only: nothing was sent. On the real site, the restaurant confirms by call.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="stripe" aria-hidden="true"></div>
+  <div class="wrap foot-in">
+    <p><b>Pupusas To Go</b> · 388 Bloomfield Ave, Bloomfield, NJ 07003 · <a href="tel:+19734292649">(973) 429-2649</a> · <a href="https://www.instagram.com/pupusastogo/" target="_blank" rel="noopener">@pupusastogo</a></p>
+    <p class="mini">Photos from Pupusas To Go's Instagram and from customers on their Google listing. Menu and prices from their menu posted May 2026. Independent concept preview, not the official site.</p>
+    <p class="mini">Preview by <a href="https://localform.online">Local Form</a></p>
+  </div>
+</footer>
+
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+<script src="app.js?v=6" defer></script>
+<script src="steam.js?v=2" defer></script>
+<script>/* lf-open: counts a tagged preview link being opened (?r=). No cookies. Local Form */(function(){try{var r=new URLSearchParams(location.search).get('r');if(!r||!navigator.sendBeacon||sessionStorage.getItem('lf-open'))return;sessionStorage.setItem('lf-open','1');navigator.sendBeacon('https://localform.online/api/open',JSON.stringify({r:r,s:location.pathname.split('/')[1]||location.hostname,d:matchMedia('(pointer:coarse)').matches?'phone':'desktop'}))}catch(e){}})();</script>
+</body>
+</html>
